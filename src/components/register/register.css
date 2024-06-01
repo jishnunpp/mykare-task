@@ -29,7 +29,7 @@
 .contactform-form{
     background-color: white;
     position: absolute;
-    width: 70%;
+    width: 700px;
     margin-top: 12rem;
     display: flex;
     flex-direction: column;
@@ -64,23 +64,17 @@
 .input-data{
     border: none;
     background-color: gainsboro;
-    width:300px; 
+    width:250px; 
     height:40px; 
-    margin: 1rem;
+    margin: 1rem ;
     padding:5px 10px;
 }
-.form-small-section{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.input-sdata{
-    border: none;
-    background-color: gainsboro;
-    width:182px; 
-    height:40px; 
-    margin: 1rem;
-    padding:5px 10px;
+.error{
+    color: red;
+    font-size: small;
+    text-align:left;
+    margin-left: 15px;
+    
 }
 .form-btn{
    display:flex;
@@ -126,13 +120,7 @@
         margin: 1rem;
         padding:5px 10px;
     }
-    .input-sdata{
-       
-        width:130px; 
-        
-        margin: 1rem;
-        padding:5px 10px;
-    }
+   
    
 }
 
@@ -145,40 +133,32 @@
     margin: 1rem;
     padding:5px 10px;
 }
-.input-sdata{
-   
-    width:115px; 
-    
-    margin: 1rem;
-    padding:5px 10px;
-}
+
 
 }
 @media screen and (max-width:850px){
+    .contactform{
+        height:550px;
+        margin:2rem 0;
+      
+    }
     .contactform-form{
         width: 90%;
     }
     .contactform-form h1{
-        margin: 0;
+        margin: 5px;
         padding: 0;
-        font-size:20px;
+        font-size:15px;
         font-weight:500px;
     }
    
-.contactform{
-    height:850px;
-    
-    margin:2rem 2rem;
-}
+
 .input-data{
     width:200px;
+    height: 22px;
     margin: 10px ;
     padding:5px 10px;
 }
-.input-sdata{ 
-    width:80px; 
-    margin: 10px;
-    padding:5px 10px;
-}
+
 
 }

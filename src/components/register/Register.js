@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import bcrypt from 'bcryptjs';
-import './register.css';
+import React, { useState } from "react";
+import bcrypt from "bcryptjs";
+import "./register.css";
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    phone: '',
-    password: '',
+    username: "",
+    email: "",
+    phone: "",
+    password: "",
   });
   const [errors, setErrors] = useState({});
 
@@ -21,18 +21,18 @@ const Register = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^\d{10}$/;
 
-    if (!formData.username) newErrors.username = 'Username is required';
+    if (!formData.username) newErrors.username = "Username is required";
     if (!formData.email) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
     } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = 'Invalid email format';
+      newErrors.email = "Invalid email format";
     }
     if (!formData.phone) {
-      newErrors.phone = 'Phone number is required';
+      newErrors.phone = "Phone number is required";
     } else if (!phoneRegex.test(formData.phone)) {
-      newErrors.phone = 'Phone number must be 10 digits';
+      newErrors.phone = "Phone number must be 10 digits";
     }
-    if (!formData.password) newErrors.password = 'Password is required';
+    if (!formData.password) newErrors.password = "Password is required";
     return newErrors;
   };
 
@@ -80,60 +80,96 @@ const Register = () => {
     }
   };
   return (
-    <div className='contactform'>
-      <div className='contactform-heading'>
+    <div className="contactform">
+      <div className="contactform-heading">
         <h2>Registration Form</h2>
       </div>
-      <form className='contactform-form' onSubmit={handleSubmit}>
-        <div className='contactform-form'>
-          <div className='form'>
-            <div className='form-section'>
-              <input
-                name='username'
-                placeholder='Username'
-                type='text'
-                className='input-data'
-                value={formData.username}
-                onChange={handleChange}
-              />
-              {errors.username && (
-                <div className='error'>{errors.username}</div>
-              )}
+      <form className="contactform-form" onSubmit={handleSubmit}>
+        <div className="contactform-form">
+          <div className="form">
+            <div className="form-section">
+              <div>
+                <div>
+                  <input
+                    name="username"
+                    placeholder="Username"
+                    type="text"
+                    className="input-data"
+                    value={formData.username}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  {errors.username && (
+                    <div className="error">{errors.username}</div>
+                  )}
+                </div>
+              </div>
 
-              <input
-                name='email'
-                placeholder='Enter email address'
-                type='email'
-                className='input-data'
+            
+              <div>
+                <div>
+                <input
+                name="email"
+                placeholder="Enter email address"
+                type="email"
+                className="input-data"
                 value={formData.email}
                 onChange={handleChange}
               />
-              {errors.email && <div className='error'>{errors.email}</div>}
 
-              <input
-                name='phone'
-                placeholder='Phone'
-                type='number'
-                className='input-data'
+                </div>
+                <div>
+                {errors.email && <div className="error">{errors.email}</div>}
+
+                </div>
+              </div>
+              
+
+            
+              <div>
+                <div>
+                <input
+                name="phone"
+                placeholder="Phone"
+                type="number"
+                className="input-data"
                 value={formData.phone}
                 onChange={handleChange}
               />
-              {errors.phone && <div className='error'>{errors.phone}</div>}
 
-              <input
-                name='password'
-                placeholder='Password'
-                type='password'
-                className='input-data'
+                </div>
+                <div>
+                {errors.phone && <div className="error">{errors.phone}</div>}
+
+                </div>
+              </div>
+            
+
+             
+              <div>
+                <div>
+                <input
+                name="password"
+                placeholder="Password"
+                type="password"
+                className="input-data"
                 value={formData.password}
                 onChange={handleChange}
               />
-              {errors.password && (
-                <div className='error'>{errors.password}</div>
+
+                </div>
+                <div>
+                {errors.password && (
+                <div className="error">{errors.password}</div>
               )}
+
+                </div>
+              </div>
+              
             </div>
-            <div className='form-btn'>
-              <button type='submit'>Register</button>
+            <div className="form-btn">
+              <button type="submit">Register</button>
             </div>
           </div>
         </div>
