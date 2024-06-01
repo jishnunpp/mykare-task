@@ -43,11 +43,30 @@ const Register = () => {
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-      setErrors({});
+      const storedUserData = JSON.parse(localStorage.getItem('userData')) || [];
+
+      // Check if email or phone already exists
+      const existingUserByEmail = storedUserData.find(
+        (user) => user.email === formData.email
+      );
+      const existingUserByPhone = storedUserData.find(
+        (user) => user.phone === formData.phone
+      );
+
+      if (existingUserByEmail) {
+        alert('User already exists with this email');
+        return;
+      }
+
+      if (existingUserByPhone) {
+        alert('User already exists with this phone number');
+        return;
+      }
 
       // Hash the password
       const hashedPassword = await bcrypt.hash(formData.password, 10);
 
+      // Prepare the data to be stored
       const userData = {
         username: formData.username,
         email: formData.email,
@@ -56,12 +75,11 @@ const Register = () => {
       };
 
       // Store data in local storage
-      localStorage.setItem("userData", JSON.stringify(userData));
-
-      console.log("Form data's", userData);
+      storedUserData.push(userData);
+      localStorage.setItem('userData', JSON.stringify(storedUserData));
+      setErrors({});
     }
   };
-
   return (
     <div className="contactform">
       <div className="contactform-heading">
