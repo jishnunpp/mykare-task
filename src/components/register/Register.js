@@ -48,7 +48,6 @@ const Register = () => {
       // Hash the password
       const hashedPassword = await bcrypt.hash(formData.password, 10);
 
-      // Prepare the data to be stored
       const userData = {
         username: formData.username,
         email: formData.email,
@@ -59,7 +58,7 @@ const Register = () => {
       // Store data in local storage
       localStorage.setItem('userData', JSON.stringify(userData));
 
-      console.log("Form data submitted and stored in local storage:", userData);
+      console.log("Form data's", userData);
     }
   };
 
