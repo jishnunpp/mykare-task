@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import bcrypt from "bcryptjs";
 import "./register.css";
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -151,7 +152,8 @@ const Register = () => {
               
             </div>
             <div className="form-btn">
-              <button type="submit">Register</button>
+              <button className="register-btn" type="submit">Register</button>
+              <Link to={'login'}><a className="login-btn">Login</a></Link> 
             </div>
           </div>
         </div>

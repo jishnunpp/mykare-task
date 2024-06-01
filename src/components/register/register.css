@@ -7,7 +7,7 @@
     background-color: rgb(248, 83, 83);
     
     width: auto;
-    height: 600px;
+    height: 650px;
 
 }
 
@@ -80,7 +80,7 @@
    display:flex;
    justify-content:center;
 }
-.form-btn button{    
+.register-btn{    
     text-align:center;
     background-color: rgb(247, 32, 32);
     color: white;
@@ -90,9 +90,29 @@
     border-radius: 10px;
     margin:1rem;
 }
-.form-btn button:hover{
+.login-btn{
+    text-align:center;
+    background-color:skyblue;
+    color: white;
+    padding: 1rem;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    margin:1rem;
+
+}
+.register-btn:hover{
     cursor:pointer;
-    background-color: rgb(450, 32, 32);
+    background-color:orange;
+}
+
+.login-btn:hover{
+    cursor:pointer;
+    background-color: blueviolet;
+}
+a{
+    text-decoration: none;
+    margin: 2rem 0;
 }
 
 
