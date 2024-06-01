@@ -1,0 +1,184 @@
+.contactform{
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
+    background-color: rgb(248, 83, 83);
+    
+    width: auto;
+    height: 600px;
+
+}
+
+.contactform-heading{
+    display: flex;
+    justify-content: center;
+   
+
+}
+.contactform-heading h2{
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 60px;
+    font-style: italic;
+    color: white;
+    text-align: center;
+    
+}
+.contactform-form{
+    background-color: white;
+    position: absolute;
+    width: 70%;
+    margin-top: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contactform-form p{
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    padding-top: 1rem;
+}
+
+.contactform-form h1{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color:black;
+}
+.form{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin:2rem 0;
+}
+.form-section{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.input-data{
+    border: none;
+    background-color: gainsboro;
+    width:300px; 
+    height:40px; 
+    margin: 1rem;
+    padding:5px 10px;
+}
+.form-small-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.input-sdata{
+    border: none;
+    background-color: gainsboro;
+    width:182px; 
+    height:40px; 
+    margin: 1rem;
+    padding:5px 10px;
+}
+.form-btn{
+   display:flex;
+   justify-content:center;
+}
+.form-btn button{    
+    text-align:center;
+    background-color: rgb(247, 32, 32);
+    color: white;
+    padding: 1rem;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    margin:1rem;
+}
+.form-btn button:hover{
+    cursor:pointer;
+    background-color: rgb(450, 32, 32);
+}
+
+
+@media screen and (max-width:1200px){
+    .contactform{
+        height:750px;
+        margin:4rem 4rem;
+    }
+    .contactform-heading h2{
+        font-size: 30px;
+        font-weight: 800;
+        line-height: 30px;
+        font-style: italic;
+        color: white;
+        text-align: center;
+        padding:2rem 0;
+        
+    }
+    .form{
+        justify-content:center;
+        
+    }
+    .input-data{
+        width:250px;
+        margin: 1rem;
+        padding:5px 10px;
+    }
+    .input-sdata{
+       
+        width:130px; 
+        
+        margin: 1rem;
+        padding:5px 10px;
+    }
+   
+}
+
+@media screen and (max-width:1050px){
+
+
+
+.input-data{
+    width:200px;
+    margin: 1rem;
+    padding:5px 10px;
+}
+.input-sdata{
+   
+    width:115px; 
+    
+    margin: 1rem;
+    padding:5px 10px;
+}
+
+}
+@media screen and (max-width:850px){
+    .contactform-form{
+        width: 90%;
+    }
+    .contactform-form h1{
+        margin: 0;
+        padding: 0;
+        font-size:20px;
+        font-weight:500px;
+    }
+   
+.contactform{
+    height:850px;
+    
+    margin:2rem 2rem;
+}
+.input-data{
+    width:200px;
+    margin: 10px ;
+    padding:5px 10px;
+}
+.input-sdata{ 
+    width:80px; 
+    margin: 10px;
+    padding:5px 10px;
+}
+
+}
