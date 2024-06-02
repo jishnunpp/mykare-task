@@ -113,6 +113,7 @@ const Login = () => {
           </div>
          
         </div>
+        <div className='login-butons'>
         <div className='form-btn'>
           <button className='login-btn' type='submit'>
             Login
@@ -128,6 +129,9 @@ const Login = () => {
               </Link>
          
         </div>
+
+        </div>
+       
       </form>
     </div>
   );

@@ -7,7 +7,7 @@
         background-color: white;
         width: 350px;
         margin: 3rem;
-        padding: 3rem 0;
+        padding: 3rem 0 0 0;
         border-radius: 10px;
     }
     .login-input{
@@ -67,4 +67,7 @@
         margin:1rem;
         width: 100%;
 
+    }
+    .login-butons{
+        margin-top: 1rem;
     }
