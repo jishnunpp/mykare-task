@@ -4,6 +4,7 @@ import Login from './components/login/Login';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import Welcome from './components/welcome/Welcome';
+import User from './components/users/User';
 
 
 function App() {
@@ -21,7 +22,11 @@ function App() {
     {
       path:'welcome',
       element:<Welcome/>
-    }
+    },
+    {
+      path:'users',
+      element:<User/>
+    },
     
   
     
