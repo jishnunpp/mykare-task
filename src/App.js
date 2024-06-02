@@ -11,12 +11,12 @@ function App() {
 
   const appRouter = createBrowserRouter([
     {
-      path: '/',
+      path: 'register',
       element: <Register />,
       
     },
     {
-      path:'login',
+      path:'/',
       element:<Login/>
     },
     {

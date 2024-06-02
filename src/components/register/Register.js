@@ -12,7 +12,7 @@ const Register = () => {
     password: '',
   });
   const [errors, setErrors] = useState({});
-
+  console.log(errors)
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -41,6 +41,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
+    console.log (validationErrors)
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
@@ -84,8 +85,11 @@ const Register = () => {
       localStorage.setItem('userData', JSON.stringify(storedUserData));
 
       setErrors({});
+      
       navigate('/login');
+      console.log(errors)
     }
+    console.log(errors)
   };
 
   return (
@@ -169,8 +173,8 @@ const Register = () => {
               <button className='register-btn' type='submit'>
                 Signup
               </button>
-              <Link to={'login'}>
-                <a className='login-btn'>Login</a>
+              <Link to={'/'}>
+                <a className='login-btn'> Login </a>
               </Link>
             </div>
           </div>
