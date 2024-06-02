@@ -77,9 +77,13 @@ const Register = () => {
       // Store data in local storage
       storedUserData.push(userData);
       localStorage.setItem('userData', JSON.stringify(storedUserData));
+      
       setErrors({});
     }
+   
   };
+
+ 
   return (
     <div className="contactform">
       <div className="contactform-heading">
