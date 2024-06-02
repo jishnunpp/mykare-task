@@ -5,6 +5,10 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();
+  const adminCredentials = {
+    username: 'admin',
+    password: 'admin'
+  };
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -29,6 +33,15 @@ const Login = () => {
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
+       // Check if admin
+       if (
+        formData.username === adminCredentials.username &&
+        formData.password === adminCredentials.password
+      ) {
+        localStorage.setItem('loggedInUserId', 'admin');
+        navigate('/users');
+        return;
+      }
       const storedUserData = JSON.parse(localStorage.getItem('userData')) || [];
 
       const existingUser = storedUserData.find(

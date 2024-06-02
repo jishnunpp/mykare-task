@@ -1,24 +1,36 @@
-import React from 'react'
-import './user.css'
+import React, { useEffect, useState } from 'react';
+import './user.css';
 
 const User = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const storedUserData = JSON.parse(localStorage.getItem('userData')) || [];
+    setUsers(storedUserData);
+  }, []);
+
   return (
     <div className='user'>
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Email</th>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <tr key={user.id}>
+              <td>{user.username}</td>
+              <td>{user.phone}</td>
+              <td>{user.email}</td>
             </tr>
-            <tr>
-                <td>vishnu</td>
-                <td>1111111111</td>
-                <td>abc@123gmail.com</td>
-            </tr>
-        </table>
-      
+          ))}
+        </tbody>
+      </table>
     </div>
-  )
-}
+  );
+};
 
-export default User
+export default User;
