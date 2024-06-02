@@ -86,11 +86,12 @@ const Register = () => {
  
   return (
     <div className="contactform">
-      <div className="contactform-heading">
-        <h2>Registration Form</h2>
-      </div>
+      
       <form className="contactform-form" onSubmit={handleSubmit}>
         <div className="contactform-form">
+          <div className="signup-heading">
+            <h2>Signup</h2>
+          </div>
           <div className="form">
             <div className="form-section">
               <div>
@@ -174,7 +175,7 @@ const Register = () => {
               
             </div>
             <div className="form-btn">
-              <button className="register-btn" type="submit">Register</button>
+              <button className="register-btn" type="submit">Signup</button>
               <Link to={'login'}><a className="login-btn">Login</a></Link> 
             </div>
           </div>
