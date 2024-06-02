@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import bcrypt from "bcryptjs";
-import "./register.css";
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import bcrypt from 'bcryptjs';
+import './register.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    phone: "",
-    password: "",
+    username: '',
+    email: '',
+    phone: '',
+    password: '',
   });
   const [errors, setErrors] = useState({});
 
@@ -22,18 +23,18 @@ const Register = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^\d{10}$/;
 
-    if (!formData.username) newErrors.username = "Username is required";
+    if (!formData.username) newErrors.username = 'Username is required';
     if (!formData.email) {
-      newErrors.email = "Email is required";
+      newErrors.email = 'Email is required';
     } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Invalid email format";
+      newErrors.email = 'Invalid email format';
     }
     if (!formData.phone) {
-      newErrors.phone = "Phone number is required";
+      newErrors.phone = 'Phone number is required';
     } else if (!phoneRegex.test(formData.phone)) {
-      newErrors.phone = "Phone number must be 10 digits";
+      newErrors.phone = 'Phone number must be 10 digits';
     }
-    if (!formData.password) newErrors.password = "Password is required";
+    if (!formData.password) newErrors.password = 'Password is required';
     return newErrors;
   };
 
@@ -66,8 +67,12 @@ const Register = () => {
       // Hash the password
       const hashedPassword = await bcrypt.hash(formData.password, 10);
 
+      // Generate a unique user ID
+      const userId = Date.now().toString();
+
       // Prepare the data to be stored
       const userData = {
+        id: userId,
         username: formData.username,
         email: formData.email,
         phone: formData.phone,
@@ -77,106 +82,96 @@ const Register = () => {
       // Store data in local storage
       storedUserData.push(userData);
       localStorage.setItem('userData', JSON.stringify(storedUserData));
-      
+
       setErrors({});
+      navigate('/login');
     }
-   
   };
 
- 
   return (
-    <div className="contactform">
-      
-      <form className="contactform-form" onSubmit={handleSubmit}>
-        <div className="contactform-form">
-          <div className="signup-heading">
+    <div className='contactform'>
+      <form className='contactform-form' onSubmit={handleSubmit}>
+        <div className='contactform-form'>
+          <div className='signup-heading'>
             <h2>Signup</h2>
           </div>
-          <div className="form">
-            <div className="form-section">
+          <div className='form'>
+            <div className='form-section'>
               <div>
                 <div>
                   <input
-                    name="username"
-                    placeholder="Username"
-                    type="text"
-                    className="input-data"
+                    name='username'
+                    placeholder='Username'
+                    type='text'
+                    className='input-data'
                     value={formData.username}
                     onChange={handleChange}
                   />
                 </div>
                 <div>
                   {errors.username && (
-                    <div className="error">{errors.username}</div>
+                    <div className='error'>{errors.username}</div>
                   )}
                 </div>
               </div>
 
-            
               <div>
                 <div>
-                <input
-                name="email"
-                placeholder="Enter email address"
-                type="email"
-                className="input-data"
-                value={formData.email}
-                onChange={handleChange}
-              />
-
+                  <input
+                    name='email'
+                    placeholder='Enter email address'
+                    type='email'
+                    className='input-data'
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div>
-                {errors.email && <div className="error">{errors.email}</div>}
-
+                  {errors.email && <div className='error'>{errors.email}</div>}
                 </div>
               </div>
-              
 
-            
               <div>
                 <div>
-                <input
-                name="phone"
-                placeholder="Phone"
-                type="number"
-                className="input-data"
-                value={formData.phone}
-                onChange={handleChange}
-              />
-
+                  <input
+                    name='phone'
+                    placeholder='Phone'
+                    type='number'
+                    className='input-data'
+                    value={formData.phone}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div>
-                {errors.phone && <div className="error">{errors.phone}</div>}
-
+                  {errors.phone && <div className='error'>{errors.phone}</div>}
                 </div>
               </div>
-            
 
-             
               <div>
                 <div>
-                <input
-                name="password"
-                placeholder="Password"
-                type="password"
-                className="input-data"
-                value={formData.password}
-                onChange={handleChange}
-              />
-
+                  <input
+                    name='password'
+                    placeholder='Password'
+                    type='password'
+                    className='input-data'
+                    value={formData.password}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div>
-                {errors.password && (
-                <div className="error">{errors.password}</div>
-              )}
-
+                  {errors.password && (
+                    <div className='error'>{errors.password}</div>
+                  )}
                 </div>
               </div>
-              
             </div>
-            <div className="form-btn">
-              <button className="register-btn" type="submit">Signup</button>
-              <Link to={'login'}><a className="login-btn">Login</a></Link> 
+            <div className='form-btn'>
+              <button className='register-btn' type='submit'>
+                Signup
+              </button>
+              <Link to={'login'}>
+                <a className='login-btn'>Login</a>
+              </Link>
             </div>
           </div>
         </div>
