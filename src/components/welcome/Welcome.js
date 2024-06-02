@@ -1,35 +1,41 @@
-import React from 'react'
-import './welcome.css'
+import React, { useEffect, useState } from 'react';
+import './welcome.css';
+import { useNavigate } from 'react-router-dom';
 
 const Welcome = () => {
-  
-  const get = (e) => {
-    localStorage.setItem('name','ajmal')
-   let value=localStorage.getItem('name');
-    console.log(value)
+  const navigate = useNavigate();
+  const [username, setUsername] = useState('');
 
-    var retrievedData = localStorage.getItem("userData");
+  useEffect(() => {
+    const loggedInUserId = localStorage.getItem('loggedInUserId');
+    if (loggedInUserId) {
+      const storedUserData = JSON.parse(localStorage.getItem('userData')) || [];
+      const loggedInUser = storedUserData.find(
+        (user) => user.id === loggedInUserId
+      );
+      if (loggedInUser) {
+        setUsername(loggedInUser.username);
+      }
+    }
+  }, []);
 
-    var data = JSON.parse(retrievedData);
-    console.log(data.email)
-    
+  const handleLogout = () => {
+    localStorage.removeItem('loggedInUserId');
+    navigate('/');
   };
-  get()
- 
 
   return (
     <div className='welcome'>
-        <div className='welcome-text'>
-            <h2>Welcome   jishnu {}</h2>
-
-        </div>
-        <div className="welcome-btn">
-              <button className="logout-btn" type="submit">Logout</button>
-              
-            </div>
-      
+      <div className='welcome-text'>
+        <h2>Welcome, {username}</h2>
+      </div>
+      <div className='welcome-btn'>
+        <button className='logout-btn' type='button' onClick={handleLogout}>
+          Logout
+        </button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Welcome;
