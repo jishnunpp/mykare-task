@@ -1,12 +1,14 @@
 .login{
     display: flex;
     justify-content: center;
+    height: 750px;
     background-color: rgb(39, 7, 39);
     }
     .login-form{
         background-color: white;
         width: 350px;
-        margin: 3rem;
+        height: 520px;
+        margin:  2rem 0 ;
         padding: 3rem 0 0 0;
         border-radius: 10px;
     }
@@ -75,4 +77,24 @@
     }
     .orm-btn{
         width: 100%;
+    }
+
+    @media screen and (max-width:800px){
+        .login{
+            height: 850px;
+        }
+        .login-form{
+            margin:4rem 0 ;
+        }
+    }
+    @media screen and (max-width:750px){
+
+        .login-form{
+           
+            width: 300px;
+        }
+        .login-input{
+            width: 250px;
+        }
+
     }
