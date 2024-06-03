@@ -86,7 +86,7 @@ const Register = () => {
 
       setErrors({});
       
-      navigate('/login');
+      navigate('/');
       console.log(errors)
     }
     console.log(errors)

@@ -54,7 +54,7 @@
     }
     .line{
         width: 100px;
-        height: 2px;
+        height: 1px;
         background-color: rgb(32, 31, 31);
         margin: 0 5px;
     }
