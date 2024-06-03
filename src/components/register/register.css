@@ -65,7 +65,7 @@
 }
 .register-btn{    
     text-align:center;
-    background-color: rgb(247, 32, 32);
+    background-color: green;
     color: white;
     padding: 1rem;
     font-size: 15px;
@@ -73,16 +73,16 @@
     border-radius: 10px;
     margin:1rem;
 }
-.login-btn{
+.log-sigpage-btn{
     text-align:center;
-    background-color:skyblue;
+    background-color: rgb(91, 161, 189);
     color: white;
     padding: 1rem ;
     font-size: 15px;
-    border: none;
+    
     border-radius: 10px;
     margin:1rem;
-
+   
 }
 .register-btn:hover{
     cursor:pointer;

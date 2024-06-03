@@ -174,7 +174,7 @@ const Register = () => {
                 Signup
               </button>
               <Link to={'/'}>
-                <a className='login-btn'> Login </a>
+                <a className='log-sigpage-btn'> Login </a>
               </Link>
             </div>
           </div>

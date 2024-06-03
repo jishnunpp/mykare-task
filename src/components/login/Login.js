@@ -125,7 +125,7 @@ const Login = () => {
         <div className='form-btn'>
          
           <Link to={'register'}>
-                <a className='reg-btn'> Signup</a>
+                <a className='reg__btn'> Signup</a>
               </Link>
          
         </div>
